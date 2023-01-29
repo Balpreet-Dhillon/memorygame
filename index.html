@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Memory Game</title>
+</head>
+<body>
+
+<div class="start-game-screen">
+    <div class="start-game" id="overlay-text"><h1 class="start-game-msg" id="overlay-heading">Click to Start</h1></div>
+</div>
+
+<div class="you-win-screen">
+    <div>
+        <div class="you-win" id="overlay-text"><h1 class="start-game-msg" id="overlay-heading">You Win!</h1></div>
+    </div>
+    <div id="play-again-btn">
+        <button class="you-win-restart-btn" id="resume-btn-styles">Play Again</button>
+    </div>
+</div>
+
+<div class="pause-game-screen">
+    <div>
+        <div class="you-win" id="overlay-text"><h1 class="paused-msg" id="overlay-heading">Paused</h1></div>
+    </div>
+    <div id="resume-game-btn">
+        <button class="continue-game-btn" id="resume-btn-styles">Resume</button>
+    </div>
+</div>
+
+<div class="game-over-screen">
+    <div class="game-over" id="overlay-text">
+        <h1 class="game-over-msg" id="overlay-heading">Game Over!</h1>
+    </div>
+    <div id="matches-scored-msg">
+        <p class="game-over-score-msg" id="matches-scored"></p>
+    </div>
+    <div id="play-again-btn">
+        <button class="restart-btn" id="btn-styles">Play Again</button>
+    </div>
+</div>
+
+<div class="container">
+    
+    <h1 class="memory-game-title">Mix & Match</h1>
+   
+    <div id="cards">
+    <table id="cards-table">
+            <tr>
+                <div id="row-one">
+                    <div class="main-card-container">
+                        <div class="the-card" data-framework="twoofhearts">
+                            <div class="the-back card-face">
+                                <img src="./images/cardback.png" class="flipped-card" alt="card">
+                            </div>
+                            <div class="the-front card-face">
+                                <img src="./images/img-1.png" class="unflipped-card" alt="card">
+                            </div>
+                        </div>        
+                    </div>
+                    <div class="main-card-container">
+                        <div class="the-card" data-framework="jackofspades">
+
+                            <div class="the-back card-face">
+                                <img src="./images/cardback.png" class="flipped-card" alt="card">
+                            </div>
+                            <div class="the-front card-face">
+                                <img src="./images/img-2.png" class="unflipped-card" alt="card">
+                            </div>
+
+                        </div>        
+                    </div>
+                    <div class="main-card-container">
+                        <div class="the-card" data-framework="eightofspades">
+
+                            <div class="the-back card-face">
+                                <img src="./images/cardback.png" class="flipped-card" alt="card">
+                            </div>
+                            <div class="the-front card-face">
+                                <img src="./images/img-3.png" class="unflipped-card" alt="card">
+                            </div>
+
+                        </div>        
+                    </div>
+                    <div class="main-card-container">
+                        <div class="the-card" data-framework="twoofhearts">
+
+                            <div class="the-back card-face">
+                                <img src="./images/cardback.png" class="flipped-card" alt="card">
+                            </div>
+                            <div class="the-front card-face">
+                                <img src="./images/img-1.png" class="unflipped-card" alt="card">
+                            </div>
+
+                        </div>        
+                    </div>
+                </div>
+        </tr>
+
+        <tr>
+            <div id="row-two">
+                <div class="main-card-container">
+                    <div class="the-card" data-framework="originalking">
+
+                        <div class="the-back card-face">
+                            <img src="./images/cardback.png" class="flipped-card" alt="card">
+                        </div>
+                        <div class="the-front card-face">
+                            <img src="./images/img-4.png" class="unflipped-card" alt="card">
+                        </div>
+
+                    </div>        
+                </div>
+                <div class="main-card-container">
+                    <div class="the-card" data-framework="nineofdiamonds">
+
+                        <div class="the-back card-face">
+                            <img src="./images/cardback.png" class="flipped-card" alt="card">
+                        </div>
+                        <div class="the-front card-face">
+                            <img src="./images/img-5.png" class="unflipped-card" alt="card">
+                        </div>
+
+                    </div>        
+                </div>
+                <div class="main-card-container">
+                    <div class="the-card" data-framework="fiveofclovers">
+
+                        <div class="the-back card-face">
+                            <img src="./images/cardback.png" class="flipped-card" alt="card">
+                        </div>
+                        <div class="the-front card-face">
+                            <img src="./images/img-6.png" class="unflipped-card" alt="card">
+                        </div>
+
+                    </div>        
+                </div>
+                <div class="main-card-container">
+                    <div class="the-card" data-framework="queenofclover">
+
+                        <div class="the-back card-face">
+                            <img src="./images/cardback.png" class="flipped-card" alt="card">
+                        </div>
+                        <div class="the-front card-face">
+                            <img src="./images/img-7.png" class="unflipped-card" alt="card">
+                        </div>
+
+                    </div>        
+                </div>
+            </div>
+    </tr>
+
+    <tr>
+        <div id="row-two">
+            <div class="main-card-container">
+                <div class="the-card" data-framework="eightofspades">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-3.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="jackofspades">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-2.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="fiveofclovers">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-6.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="aceofspades">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-8.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+        </div>
+    </tr>
+
+    <tr>
+        <div id="row-two">
+            <div class="main-card-container">
+                <div class="the-card" data-framework="nineofdiamonds">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-5.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="aceofspades">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-8.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="queenofclover">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-7.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+            <div class="main-card-container">
+                <div class="the-card" data-framework="originalking">
+
+                    <div class="the-back card-face">
+                        <img src="./images/cardback.png" class="flipped-card" alt="card">
+                    </div>
+                    <div class="the-front card-face">
+                        <img src="./images/img-4.png" class="unflipped-card" alt="card">
+                    </div>
+
+                </div>        
+            </div>
+        </div>
+    </tr>
+
+    </table>
+</div>
+
+        <div id="results">
+
+            <div class="score"></div>
+            <div class="timer"></div>
+            <button class="pause-btn" id="pause-btn-styles">Pause</button>
+
+        </div>
+    </div>
+</div>
+
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
